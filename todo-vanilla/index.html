@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="todo-app">
+      <header class="app-header">
+        <p class="eyebrow">PRODUCTIVITY</p>
+        <h1>Todo List</h1>
+        <p class="app-description">오늘 해야 할 일을 간단하게 정리해 보세요.</p>
+      </header>
+
+      <section class="date-navigation" aria-label="날짜 선택">
+        <button
+          id="previous-date-button"
+          class="date-navigation-button"
+          type="button"
+          aria-label="이전 날짜"
+        >
+          &lt;
+        </button>
+        <p id="selected-date" class="selected-date"></p>
+        <button
+          id="next-date-button"
+          class="date-navigation-button"
+          type="button"
+          aria-label="다음 날짜"
+        >
+          &gt;
+        </button>
+      </section>
+
+      <section class="todo-form-section" aria-label="할 일 추가">
+        <form id="todo-form" class="todo-form">
+          <label class="sr-only" for="todo-input">새로운 할 일</label>
+          <input
+            id="todo-input"
+            class="todo-input"
+            type="text"
+            placeholder="새로운 할 일을 입력하세요"
+            autocomplete="off"
+          />
+          <button class="add-button" type="submit">추가</button>
+        </form>
+        <p id="message" class="message" role="alert" aria-live="polite"></p>
+      </section>
+
+      <section class="todo-list-section" aria-label="할 일 목록">
+        <div class="list-header">
+          <h2>할 일</h2>
+          <span id="todo-count" class="todo-count">0개</span>
+        </div>
+        <div class="filter-buttons" aria-label="할 일 상태 필터">
+          <button class="filter-button active" type="button" data-filter="all">
+            전체
+          </button>
+          <button class="filter-button" type="button" data-filter="active">
+            진행 중
+          </button>
+          <button class="filter-button" type="button" data-filter="completed">
+            완료
+          </button>
+        </div>
+        <ul id="todo-list" class="todo-list"></ul>
+        <p id="empty-state" class="empty-state">
+          선택한 날짜에 등록된 할 일이 없습니다.<br />
+          새로운 할 일을 추가해 보세요.
+        </p>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
