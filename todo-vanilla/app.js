@@ -162,7 +162,7 @@ function addTodo(todoText) {
 
   saveTodos();
   todoInput.value = "";
-  showMessage("");
+  showMessage("add todo");
   renderTodos();
   todoInput.focus();
 }
@@ -204,7 +204,7 @@ function updateTodo(todoId) {
 
   targetTodo.text = trimmedTodoText;
   saveTodos();
-  showMessage("");
+  showMessage("edit todo ok");
   renderTodos();
 }
 
@@ -217,7 +217,7 @@ function deleteTodo(todoId) {
 
   todos.splice(targetTodoIndex, 1);
   saveTodos();
-  showMessage("");
+  showMessage("delete todos");
   renderTodos();
 }
 
